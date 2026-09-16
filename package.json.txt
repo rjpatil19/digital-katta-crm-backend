@@ -1,0 +1,32 @@
+{
+  "name": "digital-katta-crm-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx server.ts",
+    "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
+    "start": "node dist/server.cjs",
+    "lint": "tsc --noEmit",
+    "crm:start": "tsx src/backend/index.ts",
+    "crm:seed": "tsx src/backend/db/seed.ts"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.3.0",
+    "@fastify/jwt": "^10.2.2",
+    "bcryptjs": "^3.0.3",
+    "bullmq": "^6.3.6",
+    "dotenv": "^17.2.3",
+    "drizzle-orm": "^0.45.2",
+    "fastify": "^5.12.5",
+    "ioredis": "^6.0.0",
+    "postgres": "^3.4.9",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^3.0.0",
+    "@types/node": "^22.14.0",
+    "esbuild": "^0.25.0",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2"
+  }
+}
